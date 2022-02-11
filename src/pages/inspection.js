@@ -2,12 +2,12 @@ import React from 'react';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-const testing = () => {
+const inspection = () => {
   return (
     <Layout>
-      <Seo title="Testing" />
+      <Seo title="Inspection" />
     </Layout>
   );
 };
 
-export default testing;
+export default inspection;
