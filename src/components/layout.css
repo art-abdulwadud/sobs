@@ -21,3 +21,474 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
+a {
+  text-decoration: none !important;
+}
+
+/* Fonts */
+.f1 {
+  font-family: 'Alfa Slab One', cursive !important;
+}
+
+.f2 {
+  font-family: new-order, sans-serif;
+font-style: normal;
+font-weight: 300;
+}
+
+.f3 {
+  font-family: 'Bai Jamjuree', sans-serif !important;
+  font-weight: 600;
+}
+
+/* Background Colors */
+.linear-bg {
+  background-image: var(--linear-bg) !important;
+}
+
+.linear-bg-h, .white-bg-h:hover {
+  background: #4189DD !important;
+  color: white !important;
+}
+
+.white-bg, .white-bg-h, .linear-bg-h:hover {
+  background: white !important;
+  color: #4189DD !important;
+}
+
+/* Color Classes */
+.white, .dark-c-h:hover, .white-c-h {
+  color: white !important;
+}
+
+.dark-c, .dark-c-h, .white-c-h:hover {
+  color: black !important;
+}
+
+.honeydew {
+  color: honeydew !important;
+}
+
+/* Heights and Widths */
+.h-100vh {
+  min-height: 100vh;
+}
+
+/* Flexbox */
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  align-items: flex-start;
+  justify-content: left;
+}
+
+.right {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center-space-around {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.inherit-flex {
+  align-items: inherit;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.zero-flex {
+  flex: 1 1 0;
+}
+
+.half-flex {
+  flex: 1 1 40%;
+}
+
+.half-flex-on-large-screen {
+  flex: 1 1 40%;
+}
+
+.full-flex {
+  flex: 1 1 100%;
+}
+
+.heading{
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: #4189DD;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.login{
+  display: flex;
+  flex-direction: row;
+}
+
+.form-sect {
+  width: 100%;
+}
+
+/* Material Custom Changes */
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  color: white !important;
+}
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: white !important;
+}
+
+.css-1480iag-MuiInputBase-root-MuiInput-root::before {
+  border-bottom: 1px solid white !important;
+}
+
+.css-1480iag-MuiInputBase-root-MuiInput-root:after {
+  border-bottom: 2px solid white !important;
+}
+
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+  color: white !important;
+}
+
+.MuiInput-underline::before {
+  border-color: white;
+}
+
+.MuiInput-underline:hover:before {
+  border-bottom: 1px solid white !important;
+}
+
+.standard-basic {
+  min-width: 90%;
+}
+
+:focus:not([tabindex^='-']) {
+  outline: none !important;
+}
+
+/* Forms and Buttons */
+.login-form {
+  width: 100%;
+  max-width: 15rem;
+  max-width: 15rem;
+}
+
+.p-toast .p-toast-message.p-toast-message-error {
+  font-size: 14px !important;
+}
+
+.p-sidebar-left {
+  width: 15rem !important;
+}
+
+.intro-sub-heading {
+  color: white;
+  background: rgb(65, 137, 221);
+}
+
+.ball {
+  width: 200px;
+  height: 200px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  transform: rotate(50deg);
+  margin-left: -70px;
+  left: 0;
+  top: -50px;
+  background-image: linear-gradient(rgb(65, 137, 221), rgb(145, 152, 229));
+}
+
+.large-btn {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 7px 20px;
+}
+
+.large-btn, .small-btn, .use-btn {
+  border: 1px solid transparent;
+  font-family: 'Bai Jamjuree', sans-serif;
+  transition: all 0.3s;
+}
+
+.small-btn {
+  font-size: 1.1em;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.round-btn:hover {
+  border-radius: 30%;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+}
+
+.round-btn {
+  border: 1px solid transparent;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+}
+
+/* Border */
+.br-10 {
+  border-radius: 10px;
+}
+
+.square {
+  border-radius: 5px;
+}
+
+.round {
+  border-radius: 20px !important;
+}
+
+.no-box-shadow {
+  box-shadow: none !important;
+}
+
+/* Animation background */
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: ripple 15s infinite alternate;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small{
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium{
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.7;
+}
+
+.shade4{
+  opacity: 0.8;
+}
+
+.shade5{
+  opacity: 0.9;
+}
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.8);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+  
+  100%{
+    transform: scale(0.8);
+  }
+}
+
+/* Intro Header */
+.intro-header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: var(--linear-bg);
+}
+
+/* Intro Slider */
+.slide-btns-nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
+.slide-btns-nav  svg[stroke] {
+  display: none !important;
+}
+
+.uk-slideshow-items {
+  overflow: visible !important;
+}
+
+.intro-next-slide, .intro-prev-slide {
+  padding: 20px !important;
+  font-size: 1.2em !important;
+  background-color: gold !important;
+  color: #764ba2 !important;
+}
+
+.intro-prev-slide {
+  margin-right: 1px !important;
+}
+
+.right-sec, .left-sec {
+  flex: 1 1 50%;
+}
+
+.left-sec  {
+  background: transparent !important;
+}
+
+.right-sec {
+  background-size: cover !important;
+  background-attachment: fixed;
+}
+
+/* Navbar */
+.navbar {
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav-link {
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: 600;
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.nav-item .active {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dropdown-menu {
+  min-width: 20px !important;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%) !important;
+}
+
+.dropdown-item {
+  font-family: 'Bai Jamjuree', sans-serif;
+  color: black;
+  font-weight: 600;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: white !important;
+  background-image: var(--linear-bg) !important;
+}
+
+/* About Section */
+.about-sec {
+  height: 40vh !important;
+}
+
+@media only screen and (min-width: 1000px) {
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .user-btn {
+    margin-right: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .heading {
+    display: none;
+  }
+
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 865px) {
+  .right-sec {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .right-sec {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 100%;
+  }
+
+  .heading {
+    display: none;
+  }
+
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 50%;
+  }
+
+  .small-text-on-small-screen {
+    font-size: 2.5em !important;
+  }
+
+  .right-sec {
+    display: none !important;
+  }
+}
