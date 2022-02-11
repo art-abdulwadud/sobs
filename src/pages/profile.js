@@ -2,12 +2,12 @@ import React from 'react';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-const metrology = () => {
+const profile = () => {
   return (
     <Layout>
-      <Seo title="Metrology" />
+      <Seo title="My Profile" />
     </Layout>
   );
 };
 
-export default metrology;
+export default profile;
