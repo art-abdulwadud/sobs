@@ -32,6 +32,12 @@ const Layout = ({ children }) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  pageLoading: state.auth.pageLoading,
+  toast: state.auth.toast,
+  user: state.auth.user
+});
+
 const mapDispatchToProps = (dispatch) => ({
   checkUser: (user) => dispatch(checkUser(user)),
   checkPageLoading: (state) => dispatch(checkPageLoading(state))
@@ -41,4 +47,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default connect(null, mapDispatchToProps)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
