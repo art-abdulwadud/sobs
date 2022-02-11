@@ -46,13 +46,13 @@ module.exports = {
       resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
-          apiKey: 'AIzaSyACFpcEX0cgGd-VzYtmRUbG3pVu4Cp8En8',
-          authDomain: 'tabasamufibre.firebaseapp.com',
-          databaseURL: 'https://tabasamufibre.firebaseio.com',
-          projectId: 'tabasamufibre',
-          storageBucket: 'tabasamufibre.appspot.com',
-          messagingSenderId: '391023338076',
-          appId: '1:391023338076:web:049b6013d6160208e87c99'
+          apiKey: 'AIzaSyDLfK0W1T3MBRDYBVcr1gZV8iXOO2Fo7mE',
+          authDomain: 'sobs-bluexpress.firebaseapp.com',
+          projectId: 'sobs-bluexpress',
+          storageBucket: 'sobs-bluexpress.appspot.com',
+          messagingSenderId: '460312990546',
+          appId: '1:460312990546:web:98431c5a5785d49eda208b',
+          measurementId: 'G-99727260PQ'
         }
       }
     },
