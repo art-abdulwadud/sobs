@@ -9,25 +9,28 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import { connect } from 'react-redux';
+import BounceLoader from 'react-spinners/BounceLoader';
 import { checkPageLoading, checkUser } from '../state/auth/auth.actions';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pageLoading }) => {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         checkPageLoading(true);
         checkUser({ id: user.uid, email: user.email });
-        checkPageLoading(false);
+        setTimeout(() => checkPageLoading(false), 2000);
       } else {
         checkPageLoading(true);
         checkUser({});
-        checkPageLoading(false);
+        setTimeout(() => checkPageLoading(false), 2000);
       }
     });
   }, []);
   return (
     <main>
-      {children}
+      {pageLoading ? <div className="w-100 h-100vh d-flex center column linear-bg">
+        <BounceLoader color={'#ffffff'} background={'white'} customLoading={pageLoading} />
+      </div> : <>{children}</>}
     </main>
   );
 };
