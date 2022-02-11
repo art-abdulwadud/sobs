@@ -7,8 +7,8 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.1",
-    "gatsby": "^3.4.0",
     "firebase": "^8.3.3",
+    "gatsby": "^3.4.0",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-gatsby-cloud": "^2.4.1",
     "gatsby-plugin-image": "^1.4.0",
@@ -18,6 +18,7 @@
     "gatsby-plugin-sharp": "^3.4.0",
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-sharp": "^3.4.0",
+    "primeflex": "^3.1.2",
     "primeicons": "^4.1.0",
     "primereact": "^6.3.2",
     "prop-types": "^15.7.2",
