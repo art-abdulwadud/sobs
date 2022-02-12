@@ -31,8 +31,10 @@ const SignUpForm = ({ toast }) => {
           <a className="font-medium no-underline ml-2 cursor-pointer dark-c-h" onClick={() => navigate('/login')}>Log in!</a>
         </div>
         <div>
+          <label htmlFor="name" className="block text-900 mb-2 text-white f3">Full Name</label>
+          <InputText type="name" id="name" className="w-full mb-3" onChange={(ev) => setInputs({ ...inputs, email: ev.target.value })} required={true} />
           <label htmlFor="email" className="block text-900 mb-2 text-white f3">Email</label>
-          <InputText type="text" id="email" className="w-full mb-3" onChange={(ev) => setInputs({ ...inputs, email: ev.target.value })} required={true} />
+          <InputText type="email" id="email" className="w-full mb-3" onChange={(ev) => setInputs({ ...inputs, email: ev.target.value })} required={true} />
           <label htmlFor="password" className="block text-900 mb-2 text-white f3">Password</label>
           <InputText type="password" id="password" className="w-full mb-3" onChange={(ev) => setInputs({ ...inputs, password: ev.target.value })} required={true} />
           <label htmlFor="confirm-password" className="block text-900 mb-2 text-white f3">Confirm Password</label>
