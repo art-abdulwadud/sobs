@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { navigate } from 'gatsby-link';
 import { InputText } from 'primereact/inputtext';
 import RoundBtn from '../buttons/RoundBtn';
-import 'simple-login-form/dist/index.css';
 import animateCSS from '../animate';
 import { signUp } from '../../state/auth/auth.actions';
 
