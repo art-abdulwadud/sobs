@@ -1,5 +1,6 @@
 import React from 'react';
 import img from '../../images/setup-illustration.svg';
+import SignUpForm from './SignUpForm';
 
 const SignUp = () => {
   return (
