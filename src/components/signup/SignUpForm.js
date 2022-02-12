@@ -23,7 +23,7 @@ const SignUpForm = ({ toast }) => {
     }
   };
   return (
-    <form className="d-flex column w-100 p-5 center linear-bg h-100vh" onSubmit={sendUserInfoToDatabase}>
+    <form className="d-flex column w-100 center linear-bg h-100vh" onSubmit={sendUserInfoToDatabase}>
       <div className="w-full p-4" style={{ background: 'transparent', boxShadow: 'none !important' }}>
         <div className="mb-5 text-center">
           <div className="text-900 text-3xl font-medium mb-3 text-white">Sign Up</div>
@@ -32,7 +32,7 @@ const SignUpForm = ({ toast }) => {
         </div>
         <div>
           <label htmlFor="name" className="block text-900 mb-2 text-white f3">Full Name</label>
-          <InputText type="name" id="name" className="w-full mb-3" onChange={(ev) => setInputs({ ...inputs, email: ev.target.value })} required={true} />
+          <InputText type="text" id="name" className="w-full mb-3" onChange={(ev) => setInputs({ ...inputs, name: ev.target.value })} required={true} />
           <label htmlFor="email" className="block text-900 mb-2 text-white f3">Email</label>
           <InputText type="email" id="email" className="w-full mb-3" onChange={(ev) => setInputs({ ...inputs, email: ev.target.value })} required={true} />
           <label htmlFor="password" className="block text-900 mb-2 text-white f3">Password</label>
