@@ -15,6 +15,10 @@ export const checkPageLoading = (pageLoading) => ({
   type: 'page_loading', pageLoading
 });
 
+export const setToast = (toast) => ({
+  type: 'toast', toast
+});
+
 export const logout = () => {
   return async (dispatch) => {
     try {
@@ -30,9 +34,14 @@ export const logout = () => {
 export const signUp = (inputs, toast) => {
   return async () => {
     try {
-      const { email, password, confirmPassword } = inputs;
+      const { name, email, password, confirmPassword } = inputs;
       if (password === confirmPassword) {
-        await firebase.auth().createUserWithEmailAndPassword(email, password);
+        const result = await firebase.auth().createUserWithEmailAndPassword(email, password);
+        await firebase.firestore().collection('users').doc(result.user.uid).set({
+          userId: result.user.uid,
+          name: name,
+          email: email
+        });
         toast.current.show({ severity: 'success', summary: `Welcome ${email.match(/^([^@]*)@/)[1]}!`, detail: 'Just a sec, setting up your account', life: 3000 });
         setTimeout(() => navigate('/'), 2000);
       } else {

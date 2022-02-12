@@ -1,7 +1,8 @@
 const initialState = {
   user: {},
   profile: {},
-  pageLoading: true
+  pageLoading: true,
+  toast: {}
 };
 
 export default (state = initialState, action) => {
@@ -20,6 +21,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         pageLoading: action.pageLoading
+      };
+    case 'toast':
+      return {
+        ...state,
+        toast: action.toast
       };
     default:
       return state;
