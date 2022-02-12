@@ -4,6 +4,7 @@ import firebase from 'gatsby-plugin-firebase';
 import './layout.css';
 import './fonts.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css/animate.min.css';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -13,7 +14,7 @@ import BounceLoader from 'react-spinners/BounceLoader';
 import { checkPageLoading, checkUser, setToast } from '../state/auth/auth.actions';
 
 const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }) => {
-  const ref = useRef(null);
+  const ref = useRef();
   useEffect(() => {
     setToast(ref);
     firebase.auth().onAuthStateChanged((user) => {

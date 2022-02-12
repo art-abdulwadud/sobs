@@ -8,17 +8,20 @@ import { signUp } from '../../state/auth/auth.actions';
 
 const isBrowser = typeof window !== 'undefined';
 
-const SignUpForm = ({ toast }) => {
+const SignUpForm = ({ toast, signUp }) => {
   const [inputs, setInputs] = useState({});
+  const [loading, setloading] = useState(false);
   const sendUserInfoToDatabase = async (event) => {
     try {
       event.preventDefault();
+      setloading(true);
       if (isBrowser && typeof document !== 'undefined') {
         document.querySelector('#sign-up-btn').style.animationDuration = '3s';
         animateCSS('#sign-up-btn', 'hinge', () => animateCSS('#sign-up-btn', 'fadeInUpBig'));
-        await signUp(inputs, toast);
+        await signUp(inputs, toast, () => setloading(!loading));
       }
     } catch (error) {
+      setloading(false);
       console.log(error.message);
     }
   };
@@ -53,7 +56,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  signUp: (inputs, toast) => dispatch(signUp(inputs, toast))
+  signUp: (inputs, toast, callback) => dispatch(signUp(inputs, toast, callback))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
