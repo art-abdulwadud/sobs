@@ -1,7 +1,7 @@
 const initialState = {
   user: {},
   profile: {},
-  pageLoading: true
+  pageLoading: false
 };
 
 export default (state = initialState, action) => {

@@ -1,3 +1,9 @@
+:root {
+  --linear-bg: linear-gradient(rgb(65, 137, 221), rgb(145, 152, 229));
+  --light-blue: rgb(65, 137, 221);
+  --light-purple: rgb(145, 152, 229);
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -19,6 +25,11 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  background: var(--linear-bg);
+}
+
+main {
+  min-height: 100vh;
 }
 
 a {

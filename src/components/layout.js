@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import firebase from 'gatsby-plugin-firebase';
-
 import './layout.css';
+import './fonts.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import BounceLoader from 'react-spinners/BounceLoader';
 import { checkPageLoading, checkUser } from '../state/auth/auth.actions';
 
-const Layout = ({ children, pageLoading }) => {
+const Layout = ({ children, pageLoading, checkPageLoading, checkUser }) => {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
