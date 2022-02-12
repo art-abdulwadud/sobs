@@ -17,13 +17,12 @@ const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }
   const ref = useRef();
   useEffect(() => {
     setToast(ref);
+    checkPageLoading(true);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        checkPageLoading(true);
         checkUser({ id: user.uid, email: user.email });
         setTimeout(() => checkPageLoading(false), 2000);
       } else {
-        checkPageLoading(true);
         checkUser({});
         setTimeout(() => checkPageLoading(false), 2000);
       }

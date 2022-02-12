@@ -1,4 +1,3 @@
-/* eslint-disable max-statements */
 /* eslint-disable require-unicode-regexp */
 /* eslint-disable prefer-named-capture-group */
 import { navigate } from 'gatsby-link';
@@ -32,7 +31,7 @@ export const logout = () => {
   };
 };
 
-export const signUp = (inputs, toast, callback) => {
+export const signUp = (inputs, toast) => {
   return async () => {
     try {
       const { name, email, password, confirmPassword } = inputs;
@@ -48,9 +47,7 @@ export const signUp = (inputs, toast, callback) => {
       } else {
         toast.current.show({ severity: 'error', summary: 'Failed login', detail: 'Passwords don\'t match', life: 3000 });
       }
-      callback();
     } catch (error) {
-      callback();
       toast.current.show({ severity: 'error', summary: 'Failed login', detail: error.message, life: 3000 });
       console.log(error.message);
     }

@@ -10,18 +10,15 @@ const isBrowser = typeof window !== 'undefined';
 
 const SignUpForm = ({ toast, signUp }) => {
   const [inputs, setInputs] = useState({});
-  const [loading, setloading] = useState(false);
   const sendUserInfoToDatabase = async (event) => {
     try {
       event.preventDefault();
-      setloading(true);
       if (isBrowser && typeof document !== 'undefined') {
         document.querySelector('#sign-up-btn').style.animationDuration = '3s';
         animateCSS('#sign-up-btn', 'hinge', () => animateCSS('#sign-up-btn', 'fadeInUpBig'));
-        await signUp(inputs, toast, () => setloading(!loading));
+        await signUp(inputs, toast);
       }
     } catch (error) {
-      setloading(false);
       console.log(error.message);
     }
   };
@@ -56,7 +53,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  signUp: (inputs, toast, callback) => dispatch(signUp(inputs, toast, callback))
+  signUp: (inputs, toast) => dispatch(signUp(inputs, toast))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
