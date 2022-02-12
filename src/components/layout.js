@@ -1,44 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import firebase from 'gatsby-plugin-firebase';
-
 import './layout.css';
+import './fonts.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css/animate.min.css';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import { connect } from 'react-redux';
-import { checkPageLoading, checkUser } from '../state/auth/auth.actions';
+import BounceLoader from 'react-spinners/BounceLoader';
+import { checkPageLoading, checkUser, setToast } from '../state/auth/auth.actions';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }) => {
+  const ref = useRef();
   useEffect(() => {
+    setToast(ref);
+    checkPageLoading(true);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        checkPageLoading(true);
         checkUser({ id: user.uid, email: user.email });
-        checkPageLoading(false);
+        setTimeout(() => checkPageLoading(false), 2000);
       } else {
-        checkPageLoading(true);
         checkUser({});
-        checkPageLoading(false);
+        setTimeout(() => checkPageLoading(false), 2000);
       }
     });
   }, []);
   return (
     <main>
-      {children}
+      {pageLoading ? <div className="w-100 h-100vh d-flex center column linear-bg">
+        <BounceLoader color={'#ffffff'} background={'white'} customLoading={pageLoading} />
+      </div> : <>{children}</>}
     </main>
   );
 };
 
+const mapStateToProps = (state) => ({
+  pageLoading: state.auth.pageLoading,
+  toast: state.auth.toast,
+  user: state.auth.user
+});
+
 const mapDispatchToProps = (dispatch) => ({
   checkUser: (user) => dispatch(checkUser(user)),
-  checkPageLoading: (state) => dispatch(checkPageLoading(state))
+  checkPageLoading: (state) => dispatch(checkPageLoading(state)),
+  setToast: (state) => dispatch(setToast(state))
 });
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default connect(null, mapDispatchToProps)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
