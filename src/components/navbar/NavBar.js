@@ -2,14 +2,18 @@ import React, { useRef } from 'react';
 import { StyleClass } from 'primereact/styleclass';
 import { Ripple } from 'primereact/ripple';
 import { Badge } from 'primereact/badge';
+import { connect } from 'react-redux';
+import logo from '../../images/logo.jpeg';
+import { logout } from '../../state/auth/auth.actions';
 
-const NavBar = () => {
+const NavBar = ({ logout }) => {
   const btnRef13 = useRef();
   const btnRef14 = useRef();
+  const btnRef15 = useRef();
   return (
     <div className="surface-overlay relative">
       <div className="py-3 lg:py-2 px-6 flex align-items-center justify-content-between lg:static">
-        <img src="assets/images/blocks/logos/bastion-700.svg" alt="Image" height="40" className="mr-0 lg:mr-6" />
+        <img src={logo} alt="Image" height="40" className="mr-0 lg:mr-6" />
         <div className="flex align-items-center">
           <StyleClass nodeRef={btnRef13} selector="#navbar-sub-7" enterClassName="hidden" leaveToClassName="hidden" hideOnOutsideClick>
             <a ref={btnRef13} className="p-ripple cursor-pointer block lg:hidden text-700 mr-5" >
@@ -41,14 +45,34 @@ const NavBar = () => {
               </a>
             </li>
             <li className="border-top-1 surface-border lg:border-top-none">
-              <a className="p-ripple flex px-6 p-3 lg:px-3 align-items-center hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-                <img src="assets/images/blocks/avatars/circle/avatar-f-1.png" className="mr-3 lg:mr-0" style={{ width: '28px', height: '28px' }} />
-                <div className="block lg:hidden">
-                  <div className="text-900 font-medium">Josephine Lillard</div>
-                  <span className="text-600 font-medium text-sm">Marketing Specialist</span>
-                </div>
-                <Ripple />
-              </a>
+              <StyleClass nodeRef={btnRef15} selector="@next" enterClassName="hidden" enterActiveClassName="scalein" leaveToClassName="hidden" leaveActiveClassName="fadeout" hideOnOutsideClick>
+                <a ref={btnRef15} className="p-ripple flex px-6 p-3 lg:px-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+                  <i className="pi pi-user text-base lg:text-2xl mr-2 lg:mr-0 p-overlay-badge"></i>
+                  <div className="block lg:hidden">
+                    <div className="text-900 font-medium">Josephine Lillard</div>
+                    <span className="text-600 font-medium text-sm">Marketing Specialist</span>
+                  </div>
+                  <Ripple />
+                </a>
+              </StyleClass>
+              <div className="hidden static lg:absolute w-full surface-overlay left-0 top-100 z-1 shadow-none lg:shadow-2 origin-top border-round pl-3 lg:pl-0">
+                <ul className="list-none p-0 m-0">
+                  <li>
+                    <a className="p-ripple cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 border-transparent hover:border-500 transition-colors transition-duration-150 p-3">
+                      <span className="pi pi-user mr-2"></span>
+                      <span className="font-medium">Profile</span>
+                      <Ripple />
+                    </a>
+                  </li>
+                  <li onClick={() => logout()}>
+                    <a className="p-ripple cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 border-transparent hover:border-500 transition-colors transition-duration-150 p-3">
+                      <span className="pi pi-sign-out mr-2"></span>
+                      <span className="font-medium">Sign Out</span>
+                      <Ripple />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </div>
@@ -64,15 +88,29 @@ const NavBar = () => {
           </li>
           <li>
             <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-              <i className="pi pi-calendar mr-2"></i>
-              <span>Calendar</span>
+              <i className="pi pi-file mr-2"></i>
+              <span>Standardization</span>
               <Ripple />
             </a>
           </li>
           <li>
             <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-              <i className="pi pi-chart-line mr-2"></i>
-              <span>Stats</span>
+              <i className="pi pi-sitemap mr-2"></i>
+              <span>Inspection</span>
+              <Ripple />
+            </a>
+          </li>
+          <li>
+            <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+              <i className="pi pi-filter mr-2"></i>
+              <span>Testing</span>
+              <Ripple />
+            </a>
+          </li>
+          <li>
+            <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+              <i className="pi pi-check-circle mr-2"></i>
+              <span>Certification</span>
               <Ripple />
             </a>
           </li>
@@ -83,4 +121,8 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout())
+});
+
+export default connect(null, mapDispatchToProps)(NavBar);

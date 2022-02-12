@@ -24,7 +24,7 @@ export const logout = () => {
     try {
       dispatch(checkUser({}));
       await firebase.auth().signOut();
-      setTimeout(() => navigate('/'), 500);
+      setTimeout(() => navigate('/login'), 500);
     } catch (error) {
       console.log(error.message);
     }
