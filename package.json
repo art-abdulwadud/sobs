@@ -18,6 +18,7 @@
     "gatsby-plugin-sharp": "^3.4.0",
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-sharp": "^3.4.0",
+    "pdf-lib": "^1.17.1",
     "primeflex": "^3.1.2",
     "primeicons": "^4.1.0",
     "primereact": "^6.3.2",

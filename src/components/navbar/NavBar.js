@@ -32,8 +32,8 @@ const NavBar = ({ logout }) => {
           <ul className="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row border-top-1 surface-border lg:border-top-none">
             <li>
               <a className="p-ripple flex px-6 p-3 lg:px-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-                <i className="pi pi-inbox text-base lg:text-2xl mr-2 lg:mr-0"></i>
-                <span className="block lg:hidden font-medium">Inbox</span>
+                <i className="pi pi-shopping-cart text-base lg:text-2xl mr-2 lg:mr-0"></i>
+                <span className="block lg:hidden font-medium">Cart</span>
                 <Ripple />
               </a>
             </li>
