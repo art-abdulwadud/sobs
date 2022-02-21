@@ -2,7 +2,7 @@
 /* eslint-disable max-statements */
 import React from 'react';
 import { Button } from 'primereact/button';
-import { degrees, PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import { degrees, PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { pdfString } from '../pdf';
 
 const StepThree = () => {
@@ -16,15 +16,16 @@ const StepThree = () => {
         const { height } = page.getSize();
         page.drawText(`
         Full Name: Testing\n
-        Date & Timestamp: ${new Date(Date.now())}\n
+        Date & Timestamp: ${new Date(Date.now()).toDateString()}\n
         Organization: Testing\n
         Type of License: Testing
         `, {
-          x: 90,
+          x: 190,
           y: height / 2 + 300,
           size: 20,
           font: helveticaFont,
           color: rgb(0.211, 0.211, 0.211),
+          opacity: 0.4,
           rotate: degrees(-45)
         });
       });
