@@ -18,7 +18,7 @@ export const RemoveButton = ({ thisItem, checkoutProducts, setCheckoutProducts }
   };
   return (
     <Button label="Remove" icon="pi pi-trash"
-      radias="round" xtraClass="dark-box-shadow" onClick={handleClick} />
+      radias="round" className="dark-box-shadow" onClick={handleClick} />
   );
 };
 

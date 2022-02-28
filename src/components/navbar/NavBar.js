@@ -23,21 +23,21 @@ const NavBar = ({ user, cart }) => {
       </StyleClass>
       <div className="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full surface-overlay left-0 top-100 z-1 shadow-2 lg:shadow-none">
         <ul className="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row">
-          <li>
+          <li onClick={() => navigate('/')}>
             <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
               <i className="pi pi-home mr-2"></i>
               <span>Home</span>
               <Ripple />
             </a>
           </li>
-          <li>
+          <li onClick={() => navigate('/standardization')}>
             <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
               <i className="pi pi-file mr-2"></i>
               <span>Standardization</span>
               <Ripple />
             </a>
           </li>
-          <li>
+          <li onClick={() => navigate('/inspection')}>
             <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
               <i className="pi pi-sitemap mr-2"></i>
               <span>Inspection</span>
@@ -48,7 +48,6 @@ const NavBar = ({ user, cart }) => {
         <ul className="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row border-top-1 surface-border lg:border-top-none">
           <li onClick={() => navigate('/checkout')}>
             <a className="p-ripple flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 w-full">
-              {console.log(cart)}
               <i className="pi pi-shopping-cart text-base lg:text-2xl mr-2 lg:mr-0 p-overlay-badge">{cart && cart.length > 0 ? <Badge severity="danger" /> : null}</i>
               <span className="block lg:hidden font-medium">Cart</span>
               <Ripple />
