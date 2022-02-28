@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { StyleClass } from 'primereact/styleclass';
 import { Ripple } from 'primereact/ripple';
-import { Badge } from 'primereact/badge';
+// import { Badge } from 'primereact/badge';
 import { connect } from 'react-redux';
 import logo from '../../images/logo.jpeg';
 import { logout } from '../../state/auth/auth.actions';
@@ -52,13 +52,13 @@ const NavBar = ({ user }) => {
               <Ripple />
             </a>
           </li>
-          <li>
+          {/* <li>
             <a className="p-ripple flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 w-full">
               <i className="pi pi-bell text-base lg:text-2xl mr-2 lg:mr-0 p-overlay-badge"><Badge severity="danger" /></i>
               <span className="block lg:hidden font-medium">Notifications</span>
               <Ripple />
             </a>
-          </li>
+          </li> */}
           <li className="h-full relative">
             <StyleClass nodeRef={btnRef26} selector="#profile-10" enterClassName="hidden" enterActiveClassName="scalein" leaveToClassName="hidden" leaveActiveClassName="fadeout" hideOnOutsideClick>
               <div ref={btnRef26} className="cursor-pointer flex p-3 align-items-center text-600 hover:text-900 transition-colors transition-duration-150 relative select-none">

@@ -20,7 +20,6 @@ const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }
     checkPageLoading(true);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log(`User is ${user.displayName}`);
         checkUser({ id: user.uid, email: user.email, displayName: user.displayName });
         setTimeout(() => checkPageLoading(false), 2000);
       } else {
