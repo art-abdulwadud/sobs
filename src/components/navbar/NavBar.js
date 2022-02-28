@@ -5,6 +5,7 @@ import { StyleClass } from 'primereact/styleclass';
 import { Ripple } from 'primereact/ripple';
 import { Badge } from 'primereact/badge';
 import { connect } from 'react-redux';
+import { navigate } from 'gatsby-link';
 import logo from '../../images/logo.jpeg';
 import { logout } from '../../state/auth/auth.actions';
 
@@ -45,10 +46,10 @@ const NavBar = ({ user, cart }) => {
           </li>
         </ul>
         <ul className="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row border-top-1 surface-border lg:border-top-none">
-          <li>
+          <li onClick={() => navigate('/checkout')}>
             <a className="p-ripple flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 w-full">
               {console.log(cart)}
-              <i className="pi pi-shopping-cart text-base lg:text-2xl mr-2 lg:mr-0">{cart && cart.length > 0 ? <Badge severity="danger" value={cart.length} /> : null}</i>
+              <i className="pi pi-shopping-cart text-base lg:text-2xl mr-2 lg:mr-0 p-overlay-badge">{cart && cart.length > 0 ? <Badge severity="danger" /> : null}</i>
               <span className="block lg:hidden font-medium">Cart</span>
               <Ripple />
             </a>
