@@ -36,6 +36,10 @@ a {
   text-decoration: none !important;
 }
 
+button:focus, button:active {
+  box-shadow: none !important;
+}
+
 /* Fonts */
 .f1 {
   font-family: 'Alfa Slab One', cursive !important;
@@ -43,8 +47,8 @@ a {
 
 .f2 {
   font-family: new-order, sans-serif;
-font-style: normal;
-font-weight: 300;
+  font-style: normal;
+  font-weight: 300;
 }
 
 .f3 {
@@ -457,6 +461,12 @@ font-weight: 300;
 @media only screen and (min-width: 991px) {
   .user-btn {
     margin-right: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .show-in-tab-size-devices-only {
+    display: none !important;
   }
 }
 
