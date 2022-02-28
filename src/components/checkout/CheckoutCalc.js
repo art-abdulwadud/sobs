@@ -41,7 +41,7 @@ const CheckoutCalc = ({ cart, setCart, user }) => {
         className="p-button-outlined p-button-info m-1 cursor" onClick={async (ev) => {
           ev.preventDefault();
           await downloadPDF(user);
-          setCart([...cart]);
+          setCart([]);
         }}
          disabled={cart.length < 1} />
         {/* <Button className="p-button p-button-info m-1" label="Print invoice" icon="pi pi-print" /> */}
