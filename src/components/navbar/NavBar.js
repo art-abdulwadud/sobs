@@ -9,7 +9,7 @@ import { navigate } from 'gatsby-link';
 import logo from '../../images/logo.jpeg';
 import { logout } from '../../state/auth/auth.actions';
 
-const NavBar = ({ user, cart }) => {
+const NavBar = ({ user, cart, logout }) => {
   const btnRef1 = useRef();
   const btnRef26 = useRef();
   return (
@@ -83,7 +83,7 @@ const NavBar = ({ user, cart }) => {
                         <Ripple />
                       </a>
                     </li>
-                    <li>
+                    <li onClick={() => logout()}>
                       <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-200 transition-colors transition-duration-150 border-round">
                         <i className="pi pi-sign-out mr-2"></i>
                         <span className="font-medium">Sign Out</span>
