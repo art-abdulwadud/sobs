@@ -1,3 +1,5 @@
+/* eslint-disable require-unicode-regexp */
+/* eslint-disable prefer-named-capture-group */
 /* eslint-disable id-length */
 /* eslint-disable max-statements */
 import React from 'react';
@@ -7,7 +9,7 @@ import { connect } from 'react-redux';
 import { pdfString } from '../pdf';
 import { setCart } from '../../state/checkout/checkout.actions';
 
-export const downloadPDF = async () => {
+export const downloadPDF = async (user) => {
   try {
     const b64 = pdfString;
     const pdfDoc = await PDFDocument.load(b64);
@@ -16,18 +18,19 @@ export const downloadPDF = async () => {
     pages.forEach((page) => {
       const { height } = page.getSize();
       page.drawText(`
-      Full Name: Testing\n
-      Date & Timestamp: ${new Date(Date.now()).toDateString()}\n
-      Organization: Testing\n
-      Type of License: Testing
+      All Rights Reserved ${new Date(Date.now()).getFullYear()}\n
+      Licensed by: Somali Bureau of Standards to ${user.displayName ? user.displayName : user.email.match(/^([^@]*)@/)[1]}\n
+      Reference Number: 13421133 Date: ${new Date(Date.now()).toDateString()} \n
+      Single-User License only. \n
+      Any forms of redistribution are strictly prohibited and may result in legal action. 
       `, {
-        x: 190,
+        x: 220,
         y: height / 2 + 300,
         size: 20,
         font: helveticaFont,
         color: rgb(0.211, 0.211, 0.211),
-        opacity: 0.4,
-        rotate: degrees(-45)
+        opacity: 0.3,
+        rotate: degrees(-90)
       });
     });
     const pdfBytes = await pdfDoc.save();

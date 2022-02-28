@@ -3,8 +3,9 @@ import React from 'react';
 import { Button } from 'primereact/button';
 import { connect } from 'react-redux';
 import { downloadPDF } from '../standardization/StepThree';
+import { setCart } from '../../state/checkout/checkout.actions';
 
-const CheckoutCalc = ({ cart, setCart }) => {
+const CheckoutCalc = ({ cart, setCart, user }) => {
   const getTheTotal = () => {
     try {
       let total = 0;
@@ -39,8 +40,8 @@ const CheckoutCalc = ({ cart, setCart }) => {
         <Button label={cart.length > 0 ? 'Checkout' : 'No items in cart'}
         className="p-button-outlined p-button-info m-1 cursor" onClick={async (ev) => {
           ev.preventDefault();
-          await downloadPDF();
-          setCart([]);
+          await downloadPDF(user);
+          setCart([...cart]);
         }}
          disabled={cart.length < 1} />
         {/* <Button className="p-button p-button-info m-1" label="Print invoice" icon="pi pi-print" /> */}
@@ -50,7 +51,12 @@ const CheckoutCalc = ({ cart, setCart }) => {
 };
 
 const mapStateToProps = (state) => ({
-  cart: state.checkout.cart
+  cart: state.checkout.cart,
+  user: state.auth.user
 });
 
-export default connect(mapStateToProps)(CheckoutCalc);
+const mapDispatchToProps = (dispatch) => ({
+  setCart: (state) => dispatch(setCart(state))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutCalc);
