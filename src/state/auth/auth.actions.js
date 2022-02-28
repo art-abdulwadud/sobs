@@ -37,10 +37,8 @@ export const signUp = (inputs, toast) => {
       const { name, email, password, confirmPassword } = inputs;
       if (password === confirmPassword) {
         const result = await firebase.auth().createUserWithEmailAndPassword(email, password);
-        await firebase.firestore().collection('users').doc(result.user.uid).set({
-          userId: result.user.uid,
-          name: name,
-          email: email
+        result.user.updateProfile({
+          displayName: name
         });
         toast.current.show({ severity: 'success', summary: `Welcome ${email.match(/^([^@]*)@/)[1]}!`, detail: 'Just a sec, setting up your account', life: 3000 });
         setTimeout(() => navigate('/'), 2000);

@@ -4,7 +4,7 @@ import { Button } from 'primereact/button';
 import { connect } from 'react-redux';
 import { downloadPDF } from '../standardization/StepThree';
 
-const CheckoutCalc = ({ cart }) => {
+const CheckoutCalc = ({ cart, setCart }) => {
   const getTheTotal = () => {
     try {
       let total = 0;
@@ -36,10 +36,11 @@ const CheckoutCalc = ({ cart }) => {
         </div>
       </div>
       <div className="mt-3 d-flex w-100 right">
-        <Button label={cart.length > 0 ? 'Download' : 'No items in cart'}
-        className="p-button-outlined p-button-info m-1 cursor" onClick={(ev) => {
+        <Button label={cart.length > 0 ? 'Checkout' : 'No items in cart'}
+        className="p-button-outlined p-button-info m-1 cursor" onClick={async (ev) => {
           ev.preventDefault();
-          downloadPDF();
+          await downloadPDF();
+          setCart([]);
         }}
          disabled={cart.length < 1} />
         {/* <Button className="p-button p-button-info m-1" label="Print invoice" icon="pi pi-print" /> */}
