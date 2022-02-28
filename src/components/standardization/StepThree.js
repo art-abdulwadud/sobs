@@ -63,7 +63,7 @@ const StepThree = ({ cart, setCart }) => {
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
               const arr = [...cart];
-              arr.push(pdfString);
+              arr.push({ pdf: pdfString, name: 'Edible soya bean oil', price: '$300' });
               setCart(arr);
             }} />
           </span>
@@ -80,7 +80,7 @@ const StepThree = ({ cart, setCart }) => {
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
               const arr = [...cart];
-              arr.push(pdfString);
+              arr.push({ pdf: pdfString, name: 'Black Tea', price: '$300' });
               setCart(arr);
             }} />
           </span>
@@ -97,7 +97,7 @@ const StepThree = ({ cart, setCart }) => {
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
               const arr = [...cart];
-              arr.push(pdfString);
+              arr.push({ pdf: pdfString, name: 'Green Tea', price: '$300' });
               setCart(arr);
             }} />
           </span>
@@ -114,7 +114,7 @@ const StepThree = ({ cart, setCart }) => {
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
               const arr = [...cart];
-              arr.push(pdfString);
+              arr.push({ pdf: pdfString, name: 'Pasta Products', price: '$300' });
               setCart(arr);
             }} />
           </span>
@@ -131,7 +131,7 @@ const StepThree = ({ cart, setCart }) => {
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
               const arr = [...cart];
-              arr.push(pdfString);
+              arr.push({ pdf: pdfString, name: 'Brown Rice', price: '$300' });
               setCart(arr);
             }} />
           </span>
