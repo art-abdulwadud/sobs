@@ -2,22 +2,22 @@ import React from 'react';
 
 const StepTwo = () => {
   return (
-
-    <div className="surface-card p-4 shadow-2 border-round" id="step-two">
-      <div className="mb-3 flex flex-column md:flex-row md:align-items-center md:justify-content-between">
-        <div className="flex align-items-start">
-          <div>
-            <div className="text-xl font-medium text-900 mb-2">What are standards</div>
-          </div>
+    <div className="surface-section px-4 py-4 md:px-3 lg:px-4 m-3 shadow-4 border-round" id="step-two">
+      <div className="text-700 text-center">
+        {/* <div className="text-blue-600 font-bold mb-3">&nbsp;POWERED BY BLUEXPRESS</div> */}
+        <div className="text-900 font-bold text-5xl mb-3">
+          What are
+          <span className="font-bold">&nbsp;Standards</span>
+        </div>
+        <div className="text-700 line-height-3 text-1xl mb-5">
+          Somali National Standards Is A Document Established And Approved By
+          Consensus To Provide Guidelines Or Characteristics For Activities Or
+          Their Results Aimed At Achieving The Optimum Degree Of Order. Companies, trade
+          associations and consortia may produce standards for their own
+          purposes.
         </div>
       </div>
-      <div style={{ height: 'auto' }} className="shadow-4 surface-border linear-bg white p-3">
-        <p>
-          Standards define best approach in many different areas. A standard is a publication of a formal document (the standards), generally developed by consensus, containing the requirements a product, process or service should comply with. Standards are essentially voluntary in nature and producers can choose when to use them. A document approved by a recognized body, that provides, for common and repeated use, rules, guidelines or characteristics for products or related processes and production methods, with which compliance is not mandatory. In Somalia, SOBS (Somali Bureau of Standards) is the sole body responsible for the production, development, adoption and publication of standards that provide requirements for materials, manufacturing, testing, packaging and labelling to ensure that products, processes and services are fit for their purpose standardization involves the development and provision of standards, and the supply of information on standards to interested parties, and takes place on various levels. Companies, trade associations and consortia may produce standards for their own purposes.
-        </p>
-      </div>
     </div>
-
   );
 };
 
