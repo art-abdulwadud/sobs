@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from './LoginForm';
-import img from '../../images/setup-illustration.svg';
+import img from '../../images/logo.png';
 
 const Login = () => {
   return (
@@ -8,7 +8,7 @@ const Login = () => {
       <div className="heading" style={{ zIndex: '2', flex: '1 1 45%' }}>
         <div className="position-absolute ball-one ball text-left"></div>
         <div className="d-flex p-3 w-100" style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={img} alt="" width="350" height="300"/><br/>
+          <img src={img} alt="" width="350" height="auto" /><br/>
           <div className="d-flex" style={{ flexDirection: 'column', justifyContent: 'left' }}>
             <h1 className="f1" style={{ fontSize: '2.5em', color: 'rgb(65, 137, 221)' }}>Somali Bureau of <br/>Standards.</h1>
             <p className="f3 intro-sub-heading p-1">Establishing robust Qualiy Infrastructure (QI) for Somalia.</p>
