@@ -6,6 +6,7 @@ import React from 'react';
 import { Button } from 'primereact/button';
 import { degrees, PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import { connect } from 'react-redux';
+import { navigate } from 'gatsby-link';
 import { pdfString } from '../pdf';
 import { setCart } from '../../state/checkout/checkout.actions';
 
@@ -47,7 +48,7 @@ export const downloadPDF = async (user) => {
   }
 };
 
-const StepThree = ({ cart, setCart }) => {
+const StepThree = ({ cart, setCart, user }) => {
   return (
     <div className="surface-card shadow-4 border-round p-4" id="step-three">
       <div className="flex align-items-center justify-content-between mb-3">
@@ -65,8 +66,9 @@ const StepThree = ({ cart, setCart }) => {
             <Button label="Add to Cart" className="p-button-rounded linear-bg-h m-1"
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
+              user && user.id ? null : navigate('/login');
               const arr = [...cart];
-              arr.push({ pdf: pdfString, name: 'Edible soya bean oil', price: '300', qty: '1' });
+              user && user.id ? arr.push({ pdf: pdfString, name: 'Edible soya bean oil', price: '300', qty: '1' }) : null;
               setCart(arr);
             }} />
           </span>
@@ -82,8 +84,9 @@ const StepThree = ({ cart, setCart }) => {
             <Button label="Add to Cart" className="p-button-rounded linear-bg-h m-1"
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
+              user && user.id ? null : navigate('/login');
               const arr = [...cart];
-              arr.push({ pdf: pdfString, name: 'Black Tea', price: '300', qty: '1' });
+              user && user.id ? arr.push({ pdf: pdfString, name: 'Black Tea', price: '300', qty: '1' }) : null;
               setCart(arr);
             }} />
           </span>
@@ -99,8 +102,9 @@ const StepThree = ({ cart, setCart }) => {
             <Button label="Add to Cart" className="p-button-rounded linear-bg-h m-1"
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
+              user && user.id ? null : navigate('/login');
               const arr = [...cart];
-              arr.push({ pdf: pdfString, name: 'Green Tea', price: '300', qty: '1' });
+              user && user.id ? arr.push({ pdf: pdfString, name: 'Green Tea', price: '300', qty: '1' }) : null;
               setCart(arr);
             }} />
           </span>
@@ -116,8 +120,9 @@ const StepThree = ({ cart, setCart }) => {
             <Button label="Add to Cart" className="p-button-rounded linear-bg-h m-1"
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
+              user && user.id ? null : navigate('/login');
               const arr = [...cart];
-              arr.push({ pdf: pdfString, name: 'Pasta Products', price: '300', qty: '1' });
+              user && user.id ? arr.push({ pdf: pdfString, name: 'Pasta Products', price: '300', qty: '1' }) : null;
               setCart(arr);
             }} />
           </span>
@@ -133,8 +138,9 @@ const StepThree = ({ cart, setCart }) => {
             <Button label="Add to Cart" className="p-button-rounded linear-bg-h m-1"
             icon="pi pi-shopping-cart" onClick={(ev) => {
               ev.preventDefault();
+              user && user.id ? null : navigate('/login');
               const arr = [...cart];
-              arr.push({ pdf: pdfString, name: 'Brown Rice', price: '300', qty: '1' });
+              user && user.id ? arr.push({ pdf: pdfString, name: 'Brown Rice', price: '300', qty: '1' }) : null;
               setCart(arr);
             }} />
           </span>
@@ -154,7 +160,8 @@ const StepThree = ({ cart, setCart }) => {
 };
 
 const mapStateToProps = (state) => ({
-  cart: state.checkout.cart
+  cart: state.checkout.cart,
+  user: state.auth.user
 });
 
 const mapDispatchToProps = (dispatch) => ({
