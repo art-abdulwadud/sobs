@@ -53,6 +53,20 @@ const NavBar = ({ user, cart, logout }) => {
               <Ripple />
             </a>
           </li>
+          <li onClick={() => navigate('/login')}>
+            <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+
+              <span>Login</span>
+              <Ripple />
+            </a>
+          </li>
+          <li onClick={() => navigate('/signup')}>
+            <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+
+              <span>Sign Up</span>
+              <Ripple />
+            </a>
+          </li>
           {/* <li>
             <a className="p-ripple flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 w-full">
               <i className="pi pi-bell text-base lg:text-2xl mr-2 lg:mr-0 p-overlay-badge"><Badge severity="danger" /></i>
@@ -60,7 +74,7 @@ const NavBar = ({ user, cart, logout }) => {
               <Ripple />
             </a>
           </li> */}
-          <li className="h-full relative">
+          {user && user.id ? <li className="h-full relative">
             <StyleClass nodeRef={btnRef26} selector="#profile-10" enterClassName="hidden" enterActiveClassName="scalein" leaveToClassName="hidden" leaveActiveClassName="fadeout" hideOnOutsideClick>
               <div ref={btnRef26} className="cursor-pointer flex p-3 align-items-center text-600 hover:text-900 transition-colors transition-duration-150 relative select-none">
                 <div className="hidden lg:block">
@@ -94,7 +108,7 @@ const NavBar = ({ user, cart, logout }) => {
                 </div>
               </div>
             </StyleClass>
-          </li>
+          </li> : null}
         </ul>
       </div>
     </div>
