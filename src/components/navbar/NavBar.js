@@ -14,7 +14,7 @@ const NavBar = ({ user, cart, logout }) => {
   const btnRef26 = useRef();
   return (
     <div className="surface-overlay py-1 px-2 shadow-2 flex align-items-center justify-content-between relative lg:static w-100" style={{ minHeight: '80px' }}>
-      <img src={logo} alt="bastion-700" height={40} className="mr-0 lg:mr-6" />
+      <img src={logo} alt="bastion-700" height={40} className="mr-0 lg:mr-6 cursor" onClick={() => navigate('/')} />
       <StyleClass nodeRef={btnRef1} selector="@next" enterClassName="hidden" leaveToClassName="hidden" hideOnOutsideClick>
         <a ref={btnRef1} className="cursor-pointer block lg:hidden text-700">
           <i className="pi pi-bars text-4xl"></i>
@@ -23,27 +23,13 @@ const NavBar = ({ user, cart, logout }) => {
       </StyleClass>
       <div className="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full surface-overlay left-0 top-100 z-1 shadow-2 lg:shadow-none">
         <ul className="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row">
-          <li onClick={() => navigate('/')}>
+          {/* <li onClick={() => navigate('/')}>
             <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
               <i className="pi pi-home mr-2"></i>
               <span>Home</span>
               <Ripple />
             </a>
-          </li>
-          <li onClick={() => navigate('/standardization')}>
-            <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-              <i className="pi pi-file mr-2"></i>
-              <span>Standardization</span>
-              <Ripple />
-            </a>
-          </li>
-          <li onClick={() => navigate('/inspection')}>
-            <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-              <i className="pi pi-sitemap mr-2"></i>
-              <span>Inspection</span>
-              <Ripple />
-            </a>
-          </li>
+          </li>*/}
         </ul>
         <ul className="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row border-top-1 surface-border lg:border-top-none">
           <li onClick={() => navigate('/checkout')}>
