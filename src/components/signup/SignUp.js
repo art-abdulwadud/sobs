@@ -10,7 +10,6 @@ const SignUp = () => {
         <div className="d-flex p-3 w-100" style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <img src={img} alt="" width="350" height="auto"/><br/>
           <div className="d-flex" style={{ flexDirection: 'column', justifyContent: 'left' }}>
-            <h1 className="f1" style={{ fontSize: '2.5em', color: 'rgb(65, 137, 221)' }}>Somali Bureau of <br/>Standards.</h1>
             <p className="f3 intro-sub-heading p-1">Establishing robust Qualiy Infrastructure (QI) for Somalia.</p>
           </div>
         </div>
