@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import firebase from 'gatsby-plugin-firebase';
+import { css } from '@emotion/react';
 import './layout.css';
 import './fonts.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,6 +13,7 @@ import 'primeflex/primeflex.css';
 import { connect } from 'react-redux';
 import BounceLoader from 'react-spinners/BounceLoader';
 import { checkPageLoading, checkUser, setToast } from '../state/auth/auth.actions';
+import logo from '../images/preloader.png';
 
 const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }) => {
   const ref = useRef();
@@ -28,10 +30,14 @@ const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }
       }
     });
   }, []);
+  const override = css`
+    margin-bottom: -8rem;
+  `;
   return (
     <main>
-      {pageLoading ? <div className="w-100 h-100vh d-flex center column linear-bg">
-        <BounceLoader color={'#ffffff'} background={'white'} customLoading={pageLoading} />
+      {pageLoading ? <div className="w-100 h-100vh d-flex center column bg-blue-200">
+        <BounceLoader color={'#ffffff'} background={'white'} customLoading={pageLoading} css={override} size={150} />
+        <img src={logo} alt="Logo" className="logo" style={{ height: '20vh', zIndex: '1' }} />
       </div> : <>{children}</>}
     </main>
   );

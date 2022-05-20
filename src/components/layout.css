@@ -446,6 +446,24 @@ button:focus, button:active {
   height: 40vh !important;
 }
 
+.logo {
+  animation: popup 1s linear infinite alternate both;
+}
+
+@keyframes popup{
+  0%{
+    transform: scale(0.6);
+  }
+  
+  50%{
+    transform: scale(1);
+  }
+  
+  100%{
+    transform: scale(0.6);
+  }
+}
+
 @media only screen and (min-width: 1000px) {
   .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     width: 100%;
