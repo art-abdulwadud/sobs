@@ -1,3 +1,4 @@
+/* eslint-disable max-statements */
 /* eslint-disable require-unicode-regexp */
 /* eslint-disable prefer-named-capture-group */
 import { navigate } from 'gatsby-link';
@@ -31,8 +32,22 @@ export const logout = () => {
   };
 };
 
-export const signUp = (inputs, toast) => {
+const setUpUserProfile = (user) => {
   return async () => {
+    try {
+      await firebase.firestore().collection('users').add({
+        userId: user.id,
+        email: user.email,
+        role: ''
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+};
+
+export const signUp = (inputs, toast) => {
+  return async (dispatch) => {
     try {
       const { name, email, password, confirmPassword } = inputs;
       if (password === confirmPassword) {
@@ -40,6 +55,7 @@ export const signUp = (inputs, toast) => {
         result.user.updateProfile({
           displayName: name
         });
+        dispatch(setUpUserProfile({ email: result.user.email, id: result.user.uid }));
         toast.current.show({ severity: 'success', summary: `Welcome ${email.match(/^([^@]*)@/)[1]}!`, detail: 'Just a sec, setting up your account', life: 3000 });
         setTimeout(() => navigate('/'), 2000);
       } else {
