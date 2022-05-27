@@ -16,7 +16,7 @@ const Services = () => {
           <div className="text-900 mb-3 font-medium">STANDARDIZATION</div>
           <span className="honeydew text-sm line-height-3">Purchase Somali and International Standards Now.</span>
         </div>
-        <div className="col-12 md:col-4 mb-4 px-5 cursor">
+        <div className="col-12 md:col-4 mb-4 px-5 cursor" onClick={() => navigate('/inspection')}>
           <span className="p-3 shadow-2 mb-3 inline-block surface-card" style={{ borderRadius: '10px' }}>
             <i className="pi pi-check-circle text-4xl text-blue-500"></i>
           </span>
