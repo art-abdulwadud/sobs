@@ -35,10 +35,10 @@ export const logout = () => {
 const setUpUserProfile = (user) => {
   return async () => {
     try {
-      await firebase.firestore().collection('users').add({
+      await firebase.firestore().collection('users').doc(user.id).set({
         userId: user.id,
         email: user.email,
-        role: ''
+        role: 'inspector'
       });
     } catch (error) {
       console.log(error.message);

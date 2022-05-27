@@ -17,12 +17,20 @@ import logo from '../images/preloader.png';
 
 const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }) => {
   const ref = useRef();
+  const getProfile = async (user) => {
+    try {
+      const fetchedProfile = await firebase.firestore().collection('users').doc(user.uid).get();
+      checkUser({ id: user.uid, email: user.email, displayName: user.displayName, ...fetchedProfile.data() });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   useEffect(() => {
     setToast(ref);
     checkPageLoading(true);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        checkUser({ id: user.uid, email: user.email, displayName: user.displayName });
+        getProfile(user);
         setTimeout(() => checkPageLoading(false), 2000);
       } else {
         checkUser({});

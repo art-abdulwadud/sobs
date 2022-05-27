@@ -74,14 +74,7 @@ const NavBar = ({ user, cart, logout }) => {
                     <li>
                       <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-200 transition-colors transition-duration-150 border-round">
                         <i className="pi pi-user mr-2"></i>
-                        <span className="font-medium">Profile</span>
-                        <Ripple />
-                      </a>
-                    </li>
-                    <li>
-                      <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-200 transition-colors transition-duration-150 border-round">
-                        <i className="pi pi-cog mr-2"></i>
-                        <span className="font-medium">Settings</span>
+                        <span className="font-medium">Dashboard</span>
                         <Ripple />
                       </a>
                     </li>
