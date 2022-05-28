@@ -72,7 +72,11 @@ const NavBar = ({ user, cart, logout }) => {
                 <div id="profile-10" className="hidden absolute left-0 top-100 shadow-2 surface-50 border-round-bottom w-15rem lg:w-full origin-top">
                   <ul className="list-none m-0 p-1">
                     <li>
-                      <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-200 transition-colors transition-duration-150 border-round">
+                      <a className="p-ripple flex p-3 align-items-center text-600 hover:text-900 hover:surface-200 transition-colors transition-duration-150 border-round"
+                      onClick={(ev) => {
+                        ev.preventDefault();
+                        navigate('/dashboard');
+                      }}>
                         <i className="pi pi-user mr-2"></i>
                         <span className="font-medium">Dashboard</span>
                         <Ripple />

@@ -1,9 +1,21 @@
-import React from 'react';
+import * as React from 'react';
 
-const dashboard = () => {
+import { connect } from 'react-redux';
+import Layout from '../components/layout';
+import NavBar from '../components/navbar/NavBar';
+import Seo from '../components/seo';
+
+const DashboardPage = () => {
   return (
-    <div>dashboard</div>
+    <Layout>
+      <Seo title="Dashboard" />
+      <NavBar />
+    </Layout>
   );
 };
 
-export default dashboard;
+const mapStateToProps = (state) => ({
+  user: state.auth.user
+});
+
+export default connect(mapStateToProps)(DashboardPage);

@@ -15,7 +15,7 @@ import BounceLoader from 'react-spinners/BounceLoader';
 import { checkPageLoading, checkUser, setToast } from '../state/auth/auth.actions';
 import logo from '../images/preloader.png';
 
-const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }) => {
+const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast, user }) => {
   const ref = useRef();
   const getProfile = async (user) => {
     try {
@@ -42,7 +42,8 @@ const Layout = ({ children, pageLoading, checkPageLoading, checkUser, setToast }
     margin-bottom: -8rem;
   `;
   return (
-    <main>
+    <main className="bg-blue-200" style={{ minHeight: '100vh' }}>
+      {console.log(user)}
       {pageLoading ? <div className="w-100 h-100vh d-flex center column bg-blue-200">
         <BounceLoader color={'#ffffff'} background={'white'} customLoading={pageLoading} css={override} size={150} />
         <img src={logo} alt="Logo" className="logo" style={{ height: '20vh', zIndex: '1' }} />
