@@ -2,14 +2,14 @@ import * as React from 'react';
 
 import { connect } from 'react-redux';
 import Layout from '../components/layout';
-import NavBar from '../components/navbar/NavBar';
+import Sidebar from '../components/sidebar/Sidebar';
 import Seo from '../components/seo';
 
 const DashboardPage = () => {
   return (
     <Layout>
       <Seo title="Dashboard" />
-      <NavBar />
+      <Sidebar />
     </Layout>
   );
 };
